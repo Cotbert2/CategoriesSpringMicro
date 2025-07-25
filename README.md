@@ -118,7 +118,7 @@ src/main/java/com/example/products/
    mvn spring-boot:run
    ```
 
-The application will start on `http://localhost:8080`
+The application will start on `http://localhost:8085`
 
 ### Testing the API
 
@@ -126,30 +126,30 @@ You can test the API using curl, Postman, or any HTTP client:
 
 ```bash
 # Get all categories
-curl -X GET http://localhost:8080/api/categories
+curl -X GET http://localhost:8085/api/categories
 
 # Create a new category
-curl -X POST http://localhost:8080/api/categories \
+curl -X POST http://localhost:8085/api/categories \
   -H "Content-Type: application/json" \
   -d '{"name":"Books","description":"Books and literature"}'
 
 # Get category by ID
-curl -X GET http://localhost:8080/api/categories/1
+curl -X GET http://localhost:8085/api/categories/1
 
 # Update category
-curl -X PUT http://localhost:8080/api/categories/1 \
+curl -X PUT http://localhost:8085/api/categories/1 \
   -H "Content-Type: application/json" \
   -d '{"name":"Updated Books","description":"Updated description"}'
 
 # Delete category
-curl -X DELETE http://localhost:8080/api/categories/1
+curl -X DELETE http://localhost:8085/api/categories/1
 ```
 
 ## Database Configuration
 
 By default, the application uses H2 in-memory database. To view the database console:
 
-1. Navigate to `http://localhost:8080/h2-console`
+1. Navigate to `http://localhost:8085/h2-console`
 2. Use JDBC URL: `jdbc:h2:mem:testdb`
 3. Username: `sa`
 4. Password: (leave empty)
