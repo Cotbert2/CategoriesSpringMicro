@@ -164,10 +164,16 @@ The API returns appropriate HTTP status codes:
 - **404 Not Found**: Category not found
 - **400 Bad Request**: Validation errors
 
-## Contributing
+# Docker: 
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+to run docker pull th following image
+```bash
+docker pull cotbert2/categories-spring
+docker run -dit -p 8085:8085 --name spring-categoires --network test-network -e DB_HOST=mysql-test:3306 categories-spring
+```
+
+
+Make sure that u have a MySQL container running with the name `mysql-test` and the database is accessible at port 3306.
+
+
+
