@@ -2,7 +2,7 @@ package com.example.categories.models.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
-
+import jakarta.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,6 +13,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 3, message = "The name must have at least 3 characters")
     @Column(nullable = false, unique = true, length = 50)
     private String name;
 
@@ -21,7 +22,7 @@ public class Category {
 
     @CreationTimestamp
     @Column(name = "creation_date", nullable = false, updatable = false)
-    private LocalDateTime creationDate;
+    private LocalDateTime createdAt;
 
     // Default constructor
     public Category() {
@@ -63,12 +64,12 @@ public class Category {
         this.description = description;
     }
 
-    public LocalDateTime getCreationDate() {
-        return creationDate;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     @Override
@@ -77,7 +78,7 @@ public class Category {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", creationDate=" + creationDate +
+                ", createdAt=" + createdAt +
                 '}';
     }
 }

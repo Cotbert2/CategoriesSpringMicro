@@ -17,7 +17,7 @@ A Spring Boot REST API microservice for managing product categories.
 - **id**: Long - Auto-generated primary key
 - **name**: String - Required, unique, 3-50 characters
 - **description**: String - Optional, max 255 characters  
-- **creationDate**: LocalDateTime - Automatically set on creation
+- **createdAt**: LocalDateTime - Automatically set on creation
 
 ## API Endpoints
 
@@ -28,7 +28,7 @@ A Spring Boot REST API microservice for managing product categories.
 | GET | `/api/categories` | Get all categories |
 | GET | `/api/categories/{id}` | Get category by ID |
 | POST | `/api/categories` | Create new category |
-| PUT | `/api/categories/{id}` | Update existing category |
+| PATCH | `/api/categories/{id}` | Update existing category |
 | DELETE | `/api/categories/{id}` | Delete category |
 
 ## Request/Response Examples
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ### Update Category
 ```bash
-PUT /api/categories/1
+PATCH /api/categories/1
 Content-Type: application/json
 
 {
@@ -135,7 +135,7 @@ curl -X POST http://localhost:8085/api/categories \
 curl -X GET http://localhost:8085/api/categories/1
 
 # Update category
-curl -X PUT http://localhost:8085/api/categories/1 \
+curl -X PATCH http://localhost:8085/api/categories/1 \
   -H "Content-Type: application/json" \
   -d '{"name":"Updated Books","description":"Updated description"}'
 
@@ -150,7 +150,7 @@ curl -X DELETE http://localhost:8085/api/categories/1
 to run docker pull th following image
 ```bash
  docker run -dit -p 8085:8085 --name spring-categories --network $YourDockerNewtwork -e DB_USER=$YourUser -e DB_PASSWORD=$YourPassword -e DB_DATABASE=test -e DB_HOST=$YourHost
-  cotbert2/categories-spring-mysql
+  cotbert2/categories-spring-mysql:v2
 ```
 Environment variables:
 
