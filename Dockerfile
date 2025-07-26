@@ -17,7 +17,7 @@ FROM openjdk:17-jdk-alpine
 
 WORKDIR /app
 RUN mkdir ./logs
-COPY --from=builder /app/target/products-0.0.1-SNAPSHOT.jar .
+COPY --from=builder /app/target/categories-0.0.1-SNAPSHOT.jar .
 EXPOSE $PORT
 
-ENTRYPOINT ["java", "-jar", "products-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "categories-0.0.1-SNAPSHOT.jar"]

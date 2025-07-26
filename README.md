@@ -83,8 +83,6 @@ Response:
 - **Java 17+**
 - **Spring Boot 3.x**
 - **Spring Data JPA**
-- **Bean Validation**
-- **H2 Database** (development)
 - **Maven** (build tool)
 
 ## Project Structure
@@ -107,7 +105,7 @@ src/main/java/com/example/products/
 
 ### Prerequisites
 - Java 17 or higher
-- Maven 3.6+
+- Maven
 
 ### Running the Application
 
@@ -145,35 +143,38 @@ curl -X PUT http://localhost:8085/api/categories/1 \
 curl -X DELETE http://localhost:8085/api/categories/1
 ```
 
-## Database Configuration
 
-By default, the application uses H2 in-memory database. To view the database console:
-
-1. Navigate to `http://localhost:8085/h2-console`
-2. Use JDBC URL: `jdbc:h2:mem:testdb`
-3. Username: `sa`
-4. Password: (leave empty)
-
-## Error Handling
-
-The API returns appropriate HTTP status codes:
-
-- **200 OK**: Successful GET, PUT operations
-- **201 Created**: Successful POST operations
-- **204 No Content**: Successful DELETE operations
-- **404 Not Found**: Category not found
-- **400 Bad Request**: Validation errors
 
 # Docker: 
 
 to run docker pull th following image
 ```bash
-docker pull cotbert2/categories-spring
-docker run -dit -p 8085:8085 --name spring-categoires --network test-network -e DB_HOST=mysql-test:3306 categories-spring
+ docker run -dit -p 8085:8085 --name spring-categories --network $YourDockerNewtwork -e DB_USER=$YourUser -e DB_PASSWORD=$YourPassword -e DB_DATABASE=test -e DB_HOST=$YourHost
+  cotbert2/categories-spring-mysql
 ```
+Environment variables:
+
+| Variable      | Description                                 | Example         |
+|---------------|---------------------------------------------|-----------------|
+| `DB_USER`     | MySQL database user                         | `admin`         |
+| `DB_PASSWORD` | Password for the MySQL user                 | `admin`   |
+| `DB_DATABASE` | Name of the MySQL database                  | `test`          |
+| `DB_HOST`     | Host or IP address of the MySQL server      | `mysql-test`    |
+
+About the network, you should use the same network as your MySQL container or create a new one.
 
 
 Make sure that u have a MySQL container running with the name `mysql-test` and the database is accessible at port 3306.
+
+
+# Docker Compose
+
+As an alternative, you can use Docker Compose to run the application along with a MySQL database.
+
+to run docker compose pull the following image
+```bash
+docker compose up -d
+```
 
 
 

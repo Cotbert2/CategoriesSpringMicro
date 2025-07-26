@@ -8,10 +8,10 @@
 		<version>3.4.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example.cateogires</groupId>
-	<artifactId>cateogires</artifactId>
+	<groupId>com.example.categories</groupId>
+	<artifactId>categories</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cateogires</name>
+	<name>categories</name>
 	<description>Categories microservice for spring</description>
 	<url/>
 	<licenses>
