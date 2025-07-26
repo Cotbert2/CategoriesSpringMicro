@@ -1,10 +1,11 @@
-package com.example.products.controllers;
+package com.example.categories.controllers;
 
-import com.example.products.models.entities.Category;
-import com.example.products.services.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.categories.models.entities.Category;
+import com.example.categories.services.CategoryService;
 
 import java.util.List;
 

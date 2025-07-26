@@ -1,9 +1,9 @@
-package com.example.products.services;
-
-import com.example.products.models.entities.Category;
+package com.example.categories.services;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.example.categories.models.entities.Category;
 
 public interface CategoryService {
 

@@ -1,9 +1,10 @@
-package com.example.products.services;
+package com.example.categories.services;
 
-import com.example.products.models.entities.Category;
-import com.example.products.repositories.CategoryRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+
+import com.example.categories.models.entities.Category;
+import com.example.categories.repositories.CategoryRepository;
 
 import java.util.List;
 import java.util.Optional;

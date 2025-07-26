@@ -1,13 +1,13 @@
-package com.example.products;
+package com.example.categories;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductsApplication {
+public class CateogiresApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductsApplication.class, args);
+		SpringApplication.run(CateogiresApplication.class, args);
 	}
 
 }
