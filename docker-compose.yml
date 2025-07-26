@@ -1,9 +1,5 @@
 version: '3.8'
 
-networks:
-  mateo-garcia-net:
-    external: true
-
 services:
   mysql:
     container_name: mysql-test
@@ -32,3 +28,7 @@ services:
       - mysql
     networks:
       - mateo-garcia-net
+
+networks:
+  mateo-garcia-net:
+    driver: bridge
