@@ -98,7 +98,7 @@ src/main/java/com/example/products/
 ├── services/
 │   ├── CategoryService.java
 │   └── CategoryServiceImpl.java
-└── ProductsApplication.java
+└── CateogiresApplication.java
 ```
 
 ## Getting Started
